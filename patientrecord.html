@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="script.js" defer></script>
+    <title>PATIENT RECORD FORM</title>
+    <style>
+        body {
+            background-image: url(images/medical-02.jpg);
+        }
+        .container {
+            border: 1px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+            margin: 7% 25%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-primary">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1 fw-bolder text-light fs-4">PATIENT INFORMATION SYSTEM</span>
+          <a href="index.html" class="text-decoration-none fw-bold text-black-50 btn btn-outline-light">Logout</a>
+        </div>
+    </nav>
+    <div class="container-sm bg-light rounded-3 mt-3 mb-3">
+        <h3 class="p-3 fw-bold">Please fill out the form:</h3>
+        <form class="row mt-5" name="patientRecord" method="get" onsubmit="return toSubmit()">
+            <div class="row-md-4">
+                <h5 class="fw-bold bg-primary text-light text-center py-1 px-3 rounded-pill d-inline-block mb-5">Contact Information:</h5>
+            </div>
+            <div class="col-md-4">
+                <label for="firstname">First Name<span class="text-danger fw-bold">*</span></label>
+                <input type="text" class="form-control" name="firstname">
+            </div>
+            <div class="col-md-4">
+                <label for="middlename">Middle Name</label>
+                <input type="text" class="form-control" name="middlename">
+            </div>
+            <div class="col-md-4">
+                <label for="lastname">Last Name<span class="text-danger fw-bold">*</span></label>
+                <input type="text" class="form-control" name="lastname">
+            </div>
+            <div class="col-md-12 mt-3">
+                <label for="address">Address<span class="text-danger fw-bold">*</span></label>
+                <input type="text" class="form-control" name="address">
+            </div>
+            <div class="col-md-4 mt-3">
+                <label for="birthdate">Birth Date<span class="text-danger fw-bold">*</span></label>
+                <input type="date" class="form-control" name="birthdate" max="2021-11-20">
+            </div>
+            <div class="col-md-4 mt-3">
+                <label for="contact">Contact Number<span class="text-danger fw-bold">*</span></label>
+                <input type="tel" class="form-control" name="contact" placeholder="(e.g. 0900 000 0000)">
+            </div>
+            <div class="col-md-4 m-auto auto mt-3">
+                <label for="gender" class="mb-2">Gender</label><br>
+                <input type="radio" class="form-check-input" name="gender" value="male" id="">
+                <label class="form-check-label" for="">Male</label>&nbsp;&nbsp;
+                <input type="radio" class="form-check-input" name="gender" value="female" id="">
+                <label class="form-check-label" for="">Female</label>
+            </div>
+            <hr class="mt-5">
+            <div class="col-md-4 mt-3">
+                <h5 class="fw-bold bg-primary text-light text-center py-1 px-3 rounded-pill d-inline-block">Medical History:</h5>
+            </div>
+            <div class="col-md-4 mt-3" id="history">
+                <input class="form-check-input" value="asthma" type="checkbox" name="medhistory" id="">
+                <label class="form-check-label" for="medhistory">Asthma</label><br>
+                <input class="form-check-input" value="cancer" type="checkbox" name="medhistory" id="">
+                <label class="form-check-label" for="medhistory">Cancer</label><br>
+                <input class="form-check-input" value="cardiacdisease" type="checkbox" name="medhistory" id="">
+                <label class="form-check-label" for="medhistory">Cardiac Disease</label><br>
+                <input class="form-check-input" value="diabetes" type="checkbox" name="medhistory" id="">
+                <label class="form-check-label" for="medhistory">Diabetes</label><br>
+            </div>
+            <div class="col-md-4 mt-3" id="history">
+                <input class="form-check-input" value="hypertension" type="checkbox" name="medhistory" id="">
+                <label class="form-check-label" for="medhistory">Hypertension</label><br>
+                <input class="form-check-input" value="psychiatricdisorder" type="checkbox" name="medhistory" id="">
+                <label class="form-check-label" for="medhistory">Psychiatric Disorder</label><br>
+                <input class="form-check-input" value="epilepsy" type="checkbox" name="medhistory" id="">
+                <label class="form-check-label" for="medhistory">Epilepsy</label><br>
+                <input class="form-check-input" value="others" type="checkbox" name="medhistory" id="">
+                <label class="form-check-label" for="medhistory">Others</label><br>
+            </div>
+            <hr class="mt-4">
+            <div class="col-md-4 mt-3">
+                <h5 class="fw-bold bg-primary text-light text-center py-1 px-3 rounded-pill d-inline-block">Current Symptoms:</h5>
+            </div>
+            <div class="col-md-4 mt-3">
+                <select name="symptoms" id="" multiple>
+                    <option value="chestpain">Chest Pain</option>
+                    <option value="respiratory">Respiratory</option>
+                    <option value="lympathic">Lympathic</option>
+                    <option value="neurological">Neurological</option>
+                    <option value="psychiatric">Psychiatric</option>
+                    <option value="gastrointestinal">Gastrointestinal</option>
+                    <option value="hematological">Hematological</option>
+                    <option value="weightloss">Weight Loss</option>
+                </select>
+            </div>
+            <div class="col-md-4 mt-3">
+                <h6 class="fw-bold">Are you currently taking medication?</h6>
+                <p class="fst-italic">(If yes please indicate medication in the text box.)</p>
+                <input type="radio" class="form-check-input yes" name="med" value="yes">
+                <label class="form-check-label" for="med">Yes</label>&nbsp;&nbsp;
+                <input type="radio" class="form-check-input" name="med" value="no">
+                <label class="form-check-label" for="med">No</label>
+                <input type="text" class="form-control" name="medname" id="medName">
+            </div>
+            <div class="col-md-10 d-flex flex-row justify-content-end mt-5 mb-3">
+                <input type="submit" class="btn btn-primary fw-bold" value="Submit">&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-outline-danger fw-bold" type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+    <div class="container-fluid mt-5">
+        <h6 class="text-center">Copyright &copy; 2021</h6>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>  
+</body>
+</html>
