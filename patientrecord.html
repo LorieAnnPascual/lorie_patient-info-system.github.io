@@ -28,7 +28,7 @@
     </nav>
     <div class="container-sm bg-light rounded-3 mt-3 mb-3">
         <h3 class="p-3 fw-bold">Please fill out the form:</h3>
-        <form class="row mt-5" name="patientRecord" method="get" onsubmit="return toSubmit()">
+        <form class="row mt-5" name="patientRecord" method="get" onsubmit="return toSubmit()" id="formRecord" onreset="return confirm('This will delete all your inputs. Are you sure?')">
             <div class="row-md-4">
                 <h5 class="fw-bold bg-primary text-light text-center py-1 px-3 rounded-pill d-inline-block mb-5">Contact Information:</h5>
             </div>
@@ -113,10 +113,13 @@
                 <input type="text" class="form-control" name="medname" id="medName">
             </div>
             <div class="col-md-10 d-flex flex-row justify-content-end mt-5 mb-3">
-                <input type="submit" class="btn btn-primary fw-bold" value="Submit">&nbsp;&nbsp;&nbsp;
+                <input type="submit" id="submitBtn" class="btn btn-primary fw-bold" value="Submit">&nbsp;&nbsp;&nbsp;
                 <button class="btn btn-outline-danger fw-bold" type="reset">Reset</button>
             </div>
         </form>
+        <div class="col-md-4 mt-3" id="display">
+            <pre></pre>
+        </div>
     </div>
     <div class="container-fluid mt-5">
         <h6 class="text-center">Copyright &copy; 2021</h6>
