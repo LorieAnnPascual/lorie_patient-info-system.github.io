@@ -28,7 +28,7 @@
     </nav>
     <div class="container-sm bg-light rounded-3 mt-3 mb-3">
         <h3 class="p-3 fw-bold">Please fill out the form:</h3>
-        <form class="row mt-5" name="patientRecord" method="get" onsubmit="return toSubmit()" id="formRecord" onreset="return confirm('This will delete all your inputs. Are you sure?')">
+        <form class="row mt-5" name="patientRecord" method="get" onsubmit="return toSubmit()" id="formRecord" onreset="return confirm('This will delete all your inputs. Are you sure?')" action="index.html">
             <div class="row-md-4">
                 <h5 class="fw-bold bg-primary text-light text-center py-1 px-3 rounded-pill d-inline-block mb-5">Contact Information:</h5>
             </div>
@@ -92,7 +92,7 @@
                 <h5 class="fw-bold bg-primary text-light text-center py-1 px-3 rounded-pill d-inline-block">Current Symptoms:</h5>
             </div>
             <div class="col-md-4 mt-3">
-                <select name="symptoms" id="" multiple>
+                <select name="symptoms" id="symptoms" multiple>
                     <option value="chestpain">Chest Pain</option>
                     <option value="respiratory">Respiratory</option>
                     <option value="lympathic">Lympathic</option>
